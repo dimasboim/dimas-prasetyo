@@ -1,10 +1,12 @@
 'use client';
 
+import React, { useRef } from 'react';
 import { motion, easeOut, easeInOut, useScroll, useSpring } from 'framer-motion';
 import { skillGroups } from './skills';
 import { Briefcase, Building2, TrendingUp, Compass, Users, Rocket, Mail, ArrowRight, ExternalLink, Cpu, ClipboardList, Camera, Link, ChevronDown } from 'lucide-react';
 import CountUp from './components/CountUp';
 import Carousel from './components/Carousel';
+import ParallaxOrbs from './components/ParallaxOrbs';
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -44,6 +46,9 @@ const scaleIn = {
 export default function HomePage() {
   const { scrollYProgress } = useScroll();
   const scaleX = useSpring(scrollYProgress, { stiffness: 120, damping: 30 });
+  const sectionRef1 = useRef<HTMLElement | null>(null);
+  const sectionRef2 = useRef<HTMLElement | null>(null);
+  const sectionRef3 = useRef<HTMLElement | null>(null);
   return (
     <motion.main className="site-shell" initial="hidden" animate="visible" variants={stagger}>
       {/* Scroll Progress Bar */}
@@ -154,7 +159,8 @@ export default function HomePage() {
       </motion.section>
 
       {/* Executive Summary */}
-      <motion.section id="skills" className="section features" variants={fadeUp} viewport={{ once: true, amount: 0.2 }}>
+      <motion.section ref={sectionRef1} id="skills" className="section features" variants={fadeUp} viewport={{ once: true, amount: 0.2 }}>
+        <ParallaxOrbs containerRef={sectionRef1} />
         <div className="section-intro">
           <p className="section-label">Executive summary</p>
           <h2>Operator CTO with a track record of shipping, scaling, and transforming.</h2>
@@ -176,7 +182,8 @@ export default function HomePage() {
       </motion.section>
 
       {/* Leadership Principles */}
-      <motion.section className="section features" variants={fadeUp} viewport={{ once: true, amount: 0.2 }}>
+      <motion.section ref={sectionRef2} className="section features" variants={fadeUp} viewport={{ once: true, amount: 0.2 }}>
+        <ParallaxOrbs containerRef={sectionRef2} />
         <div className="section-intro">
           <p className="section-label">Leadership principles</p>
           <h2>How I lead product, people, and platforms.</h2>
@@ -198,7 +205,8 @@ export default function HomePage() {
       </motion.section>
 
       {/* Advisory & Boards */}
-      <motion.section className="section features" variants={fadeUp} viewport={{ once: true, amount: 0.2 }}>
+      <motion.section ref={sectionRef3} className="section features" variants={fadeUp} viewport={{ once: true, amount: 0.2 }}>
+        <ParallaxOrbs containerRef={sectionRef3} />
         <div className="section-intro">
           <p className="section-label">Advisory & boards</p>
           <h2>Advisor to founders and operators on product, data, and scale.</h2>

@@ -308,6 +308,8 @@ main.site-shell {
 
 .section {
   margin: 6rem 0;
+  position: relative;
+  overflow: hidden;
 }
 
 .section-intro {
@@ -732,6 +734,13 @@ main.site-shell {
   box-shadow: 0 8px 20px rgba(15, 23, 42, 0.06);
   animation: float 3s ease-in-out infinite;
 }
+/* Parallax orbs */
+.parallax-orbs { position: absolute; inset: 0; pointer-events: none; z-index: 0; }
+.orb { position: absolute; width: 180px; height: 180px; border-radius: 50%; filter: blur(24px); opacity: 0.35; }
+.orb-green { top: 10%; left: -60px; background: radial-gradient(circle, rgba(34,197,94,0.25), transparent 70%); }
+.orb-yellow { bottom: 15%; right: -80px; background: radial-gradient(circle, rgba(245,158,11,0.25), transparent 70%); }
+.orb-blue { top: 60%; left: 60%; background: radial-gradient(circle, rgba(59,130,246,0.25), transparent 70%); }
+
 
 @keyframes float {
   0% { transform: translateX(-50%) translateY(0); }
