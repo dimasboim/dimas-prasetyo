@@ -6,55 +6,86 @@ export default function HomePage() {
           <p className="eyebrow">Senior Technology Leader</p>
           <h1>Hi, I'm Dimas — a senior tech leader from Jakarta.</h1>
           <p className="intro">
-            I build and lead technology teams that deliver digital products with strong
-            business impact. My experience spans scaling engineering organizations, defining
-            product strategy, and transforming enterprise systems for growth.
+            I help teams build digital platforms, scale engineering organizations, and
+            execute technology transformations with strong business outcomes.
           </p>
           <div className="hero-actions">
-            <a className="button" href="mailto:dimasboim@gmail.com">Get in touch</a>
-            <a className="button button-secondary" href="#selected-work">Selected work</a>
+            <a className="button" href="mailto:dimasboim@gmail.com">Contact me</a>
+            <a className="button button-secondary" href="#selected-work">View work</a>
+          </div>
+          <div className="stats-grid">
+            <div>
+              <span>15+</span>
+              <p>Years experience</p>
+            </div>
+            <div>
+              <span>3</span>
+              <p>Executive roles</p>
+            </div>
+            <div>
+              <span>20+</span>
+              <p>Growth initiatives</p>
+            </div>
           </div>
         </div>
+
         <div className="hero-visual">
-          <div className="hero-card">
-            <p className="hero-role">Current Role</p>
-            <h2>CTO, PadiUMKM</h2>
-            <p className="hero-date">2025</p>
+          <div className="media-shell">
+            <img src="/images/image-1.jpg" alt="Dimas Prasetyo leadership" />
+            <div className="media-caption">
+              <p>Digital leadership for product, operations, and enterprise impact.</p>
+            </div>
           </div>
         </div>
       </section>
 
-      <section className="section about">
-        <div className="section-copy">
-          <p className="section-label">About</p>
-          <h2>Technology, leadership, and execution</h2>
-          <p>
-            I help organizations turn digital ambition into scalable reality. From corporate
-            transformation to startup product execution, my focus is on people, process, and technology.
-          </p>
+      <section className="section features">
+        <div className="section-intro">
+          <p className="section-label">Capabilities</p>
+          <h2>Leadership grounded in strategy, teams, and execution.</h2>
+        </div>
+        <div className="feature-grid">
+          <article className="feature-card">
+            <h3>Strategic direction</h3>
+            <p>Align technology with business goals through clear roadmaps and measurable outcomes.</p>
+          </article>
+          <article className="feature-card">
+            <h3>Team growth</h3>
+            <p>Develop high-performing engineering organizations with strong culture and accountability.</p>
+          </article>
+          <article className="feature-card">
+            <h3>Product delivery</h3>
+            <p>Turn complex initiatives into scalable digital products with speed and quality.</p>
+          </article>
         </div>
       </section>
 
-      <section className="section roles">
+      <section className="section selected" id="selected-work">
         <div className="section-label">Selected work</div>
-        <div id="selected-work" className="grid">
-          <article className="card">
-            <span className="badge">2025</span>
-            <h3>CTO</h3>
-            <p>PadiUMKM</p>
-            <p>Leading platform strategy and delivering digital operations for Indonesia's growing UMKM ecosystem.</p>
+        <div className="project-grid">
+          <article className="project-card">
+            <img src="/images/image-2.jpg" alt="PadiUMKM leadership" />
+            <div className="project-copy">
+              <span className="badge">2025</span>
+              <h3>CTO, PadiUMKM</h3>
+              <p>Leading platform strategy for Indonesia’s UMKM ecosystem.</p>
+            </div>
           </article>
-          <article className="card">
-            <span className="badge">2015</span>
-            <h3>CTO</h3>
-            <p>Campaign.com</p>
-            <p>Built and scaled marketing technology solutions for high-impact digital campaigns.</p>
+          <article className="project-card">
+            <img src="/images/image-3.jpg" alt="Campaign.com leadership" />
+            <div className="project-copy">
+              <span className="badge">2015</span>
+              <h3>CTO, Campaign.com</h3>
+              <p>Built and scaled digital campaign technologies across the region.</p>
+            </div>
           </article>
-          <article className="card">
-            <span className="badge">Enterprise</span>
-            <h3>VP IT CRM</h3>
-            <p>Kalbe</p>
-            <p>Oversaw CRM and digital engagement systems for one of Indonesia’s leading pharmaceutical companies.</p>
+          <article className="project-card">
+            <img src="/images/image-4.jpg" alt="Kalbe leadership" />
+            <div className="project-copy">
+              <span className="badge">Enterprise</span>
+              <h3>VP IT CRM, Kalbe</h3>
+              <p>Oversaw CRM and engagement systems for a leading pharmaceutical group.</p>
+            </div>
           </article>
         </div>
       </section>
@@ -62,8 +93,8 @@ export default function HomePage() {
       <section className="section contact">
         <div className="section-copy">
           <p className="section-label">Contact</p>
-          <h2>Let’s build with clarity and momentum.</h2>
-          <p>Reach out to discuss leadership, technology strategy, or product execution.</p>
+          <h2>Ready to shape tech, product, and people?</h2>
+          <p>Let's connect on leadership, transformation, or digital strategy.</p>
           <a className="button button-primary" href="mailto:dimasboim@gmail.com">dimasboim@gmail.com</a>
         </div>
       </section>
