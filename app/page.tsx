@@ -1,8 +1,8 @@
 'use client';
 
-import { motion, easeOut, easeInOut } from 'framer-motion';
+import { motion, easeOut, easeInOut, useScroll, useSpring } from 'framer-motion';
 import { skillGroups } from './skills';
-import { Briefcase, Building2, TrendingUp, Compass, Users, Rocket, Mail, ArrowRight, ExternalLink, Cpu, ClipboardList } from 'lucide-react';
+import { Briefcase, Building2, TrendingUp, Compass, Users, Rocket, Mail, ArrowRight, ExternalLink, Cpu, ClipboardList, Camera, Link, ChevronDown } from 'lucide-react';
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -40,8 +40,12 @@ const scaleIn = {
 };
 
 export default function HomePage() {
+  const { scrollYProgress } = useScroll();
+  const scaleX = useSpring(scrollYProgress, { stiffness: 120, damping: 30 });
   return (
     <motion.main className="site-shell" initial="hidden" animate="visible" variants={stagger}>
+      {/* Scroll Progress Bar */}
+      <motion.div className="scroll-progress" style={{ scaleX }} />
       {/* Hero Section */}
       <motion.section className="hero" variants={fadeUp} viewport={{ once: true, amount: 0.2 }}>
         <motion.div className="hero-copy" variants={stagger}>
@@ -49,7 +53,7 @@ export default function HomePage() {
             Senior Technology Leader
           </motion.p>
           <motion.h1 variants={card}>
-            Hi, I'm Dimas —<br />a senior tech leader from Jakarta.
+            Hi, I'm Dimas — a senior tech leader from Jakarta.
           </motion.h1>
           <motion.p className="intro" variants={card}>
             I help teams build digital platforms, scale engineering organizations, and
@@ -66,6 +70,12 @@ export default function HomePage() {
             </motion.a>
             <motion.a className="button button-secondary" href="/cv" variants={card} whileHover={{ scale: 1.03, y: -2 }} whileTap={{ scale: 0.97 }}>
               View CV
+            </motion.a>
+            <motion.a className="button button-secondary" href="https://instagram.com/dimasboim" variants={card} whileHover={{ scale: 1.03, y: -2 }} whileTap={{ scale: 0.97 }} target="_blank" rel="noopener noreferrer">
+              <Camera size={16} /> IG
+            </motion.a>
+            <motion.a className="button button-secondary" href="https://www.linkedin.com/in/dimasprasetyotegar" variants={card} whileHover={{ scale: 1.03, y: -2 }} whileTap={{ scale: 0.97 }} target="_blank" rel="noopener noreferrer">
+              <Link size={16} /> LinkedIn
             </motion.a>
           </motion.div>
 
@@ -135,10 +145,14 @@ export default function HomePage() {
             </div>
           </motion.div>
         </motion.div>
+        {/* Scroll indicator to next section */}
+        <motion.a href="#skills" className="scroll-indicator" initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.9 }} whileHover={{ y: -2 }}>
+          <ChevronDown size={18} />
+        </motion.a>
       </motion.section>
 
       {/* Executive Summary */}
-      <motion.section className="section features" variants={fadeUp} viewport={{ once: true, amount: 0.2 }}>
+      <motion.section id="skills" className="section features" variants={fadeUp} viewport={{ once: true, amount: 0.2 }}>
         <div className="section-intro">
           <p className="section-label">Executive summary</p>
           <h2>Operator CTO with a track record of shipping, scaling, and transforming.</h2>
@@ -327,7 +341,7 @@ export default function HomePage() {
       </motion.section>
 
       {/* Contact Section */}
-      <motion.section className="section contact" variants={fadeUp} viewport={{ once: true, amount: 0.2 }}>
+      <motion.section id="contact" className="section contact" variants={fadeUp} viewport={{ once: true, amount: 0.2 }}>
         <motion.div className="section-copy" variants={scaleIn}>
           <p className="section-label">Contact</p>
           <h2>Ready to shape tech, product, and people?</h2>
@@ -351,6 +365,14 @@ export default function HomePage() {
           >
             Download CV
           </motion.a>
+          <motion.div className="social-links" variants={stagger}>
+            <a className="social-link" href="https://instagram.com/dimasboim" target="_blank" rel="noopener noreferrer">
+              <Camera size={16} /> @dimasboim
+            </a>
+            <a className="social-link" href="https://www.linkedin.com/in/dimasprasetyotegar" target="_blank" rel="noopener noreferrer">
+              <Link size={16} /> in/dimasprasetyotegar
+            </a>
+          </motion.div>
         </motion.div>
       </motion.section>
     </motion.main>

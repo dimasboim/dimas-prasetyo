@@ -145,30 +145,28 @@ main.site-shell {
 
 .hero h1 {
   margin: 0;
-  font-size: clamp(3rem, 6vw, 5rem);
-  line-height: 1.02;
-  max-width: 11ch;
-  letter-spacing: -0.02em;
-  background: linear-gradient(135deg, #f8fafc 0%, #cbd5e1 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  font-size: clamp(2.6rem, 5.5vw, 3.4rem);
+  line-height: 1.15;
+  max-width: 24ch;
+  letter-spacing: -0.015em;
+  color: #0f172a; /* slate-900 for visibility */
+  font-weight: 800;
 }
 
 .intro,
 .section-copy p {
-  margin: 1.6rem 0 0;
-  max-width: 680px;
+  margin: 1.1rem 0 0;
+  max-width: 720px;
   color: var(--color-muted);
-  font-size: 1.125rem;
-  line-height: 1.75;
+  font-size: 1.05rem;
+  line-height: 1.7;
 }
 
 .hero-actions {
   display: flex;
   flex-wrap: wrap;
-  gap: 1rem;
-  margin-top: 2.5rem;
+  gap: 0.6rem;
+  margin-top: 1.2rem;
 }
 
 .button {
@@ -394,6 +392,7 @@ main.site-shell {
   overflow: hidden;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
+  cursor: default;
 }
 
 .feature-card:hover,
@@ -401,7 +400,7 @@ main.site-shell {
   transform: translateY(-6px) scale(1.01);
   border-color: var(--color-accent);
   background: #ffffff;
-  box-shadow: 0 12px 36px rgba(15, 23, 42, 0.1);
+  box-shadow: 0 16px 44px rgba(15, 23, 42, 0.12);
 }
 
 .feature-card h3,
@@ -498,6 +497,75 @@ main.site-shell {
   box-shadow: 0 28px 70px rgba(99, 102, 241, 0.35);
 }
 
+.social-links {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.social-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.5rem 0.75rem;
+  border-radius: 999px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  color: var(--color-text);
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+/* Footer */
+.site-footer {
+  margin-top: 4rem;
+  border-top: 1px solid var(--color-border);
+  background: linear-gradient(180deg, rgba(14, 165, 233, 0.06) 0%, rgba(255, 255, 255, 0.9) 100%);
+}
+
+.footer-inner {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 1fr;
+  gap: 1rem;
+  padding: 2rem 0;
+}
+
+.footer-brand {
+  display: grid;
+  gap: 0.25rem;
+  color: var(--color-text);
+}
+
+.footer-links, .footer-social {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem 1rem;
+  align-content: start;
+}
+
+.footer-links a, .footer-social a {
+  color: var(--color-text);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+}
+
+.footer-links a:hover, .footer-social a:hover {
+  border-bottom-color: var(--color-accent);
+}
+
+.footer-meta {
+  grid-column: 1 / -1;
+  margin-top: 0.5rem;
+  color: var(--color-muted);
+  font-size: 0.85rem;
+}
+
+@media (max-width: 860px) {
+  .footer-inner {
+    grid-template-columns: 1fr;
+  }
+}
+
 @keyframes fadeUp {
   from {
     opacity: 0;
@@ -580,4 +648,58 @@ main.site-shell {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
+}
+/* Anchor target reveal */
+.section:target {
+  box-shadow: 0 0 0 4px rgba(14, 165, 233, 0.12) inset;
+  animation: anchorReveal 800ms ease-out;
+}
+
+@keyframes anchorReveal {
+  from { background-color: rgba(14, 165, 233, 0.06); }
+  to { background-color: transparent; }
+}
+
+/* Scroll progress bar */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  transform-origin: 0 0;
+  background: linear-gradient(90deg, #0ea5e9 0%, #6366f1 100%);
+  z-index: 50;
+}
+
+/* Section divider */
+.section {
+  position: relative;
+}
+.section::after {
+  content: "";
+  position: absolute;
+  bottom: -3rem;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--color-border), transparent);
+}
+
+/* Scroll indicator */
+.scroll-indicator {
+  position: absolute;
+  bottom: -22px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 36px;
+  height: 36px;
+  display: grid;
+  place-items: center;
+  border-radius: 999px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  color: var(--color-text);
+  text-decoration: none;
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.06);
 }

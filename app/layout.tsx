@@ -59,7 +59,28 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body>{children}</body>
+      <body>
+        {children}
+        <footer className="site-footer">
+          <div className="footer-inner site-shell">
+            <div className="footer-brand">
+              <strong>Dimas Prasetyo</strong>
+              <span>Senior Technology Leader</span>
+            </div>
+            <nav className="footer-links">
+              <a href="#skills">Skills</a>
+              <a href="#selected-work">Selected work</a>
+              <a href="/cv">CV</a>
+              <a href="#contact">Contact</a>
+            </nav>
+            <div className="footer-social">
+              <a href="https://instagram.com/dimasboim" target="_blank" rel="noopener noreferrer">Instagram</a>
+              <a href="https://www.linkedin.com/in/dimasprasetyotegar" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            </div>
+            <div className="footer-meta">© {new Date().getFullYear()} Dimas Prasetyo</div>
+          </div>
+        </footer>
+      </body>
     </html>
   );
 }
