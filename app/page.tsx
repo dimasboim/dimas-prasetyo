@@ -3,6 +3,7 @@
 import { motion, easeOut, easeInOut, useScroll, useSpring } from 'framer-motion';
 import { skillGroups } from './skills';
 import { Briefcase, Building2, TrendingUp, Compass, Users, Rocket, Mail, ArrowRight, ExternalLink, Cpu, ClipboardList, Camera, Link, ChevronDown } from 'lucide-react';
+import CountUp from './components/CountUp';
 import Carousel from './components/Carousel';
 
 const fadeUp = {
@@ -82,7 +83,7 @@ export default function HomePage() {
 
           {/* Stats Grid */}
           <motion.div className="stats-grid" variants={stagger}>
-            <motion.div className="stat-card" variants={card} whileHover={{ scale: 1.05, y: -5 }}>
+            <motion.div className="stat-card stat-green" variants={card} whileHover={{ scale: 1.05, y: -5 }}>
               <motion.div
                 className="stat-icon"
                 initial={{ rotate: -10 }}
@@ -92,10 +93,10 @@ export default function HomePage() {
               >
                 <Briefcase size={28} strokeWidth={2} />
               </motion.div>
-              <span className="stat-number">15+</span>
+              <span className="stat-number"><CountUp to={15} suffix="+" /></span>
               <p className="stat-label">Years experience</p>
             </motion.div>
-            <motion.div className="stat-card" variants={card} whileHover={{ scale: 1.05, y: -5 }}>
+            <motion.div className="stat-card stat-yellow" variants={card} whileHover={{ scale: 1.05, y: -5 }}>
               <motion.div
                 className="stat-icon"
                 initial={{ rotate: 10 }}
@@ -105,10 +106,10 @@ export default function HomePage() {
               >
                 <Building2 size={28} strokeWidth={2} />
               </motion.div>
-              <span className="stat-number">3</span>
+              <span className="stat-number"><CountUp to={3} /></span>
               <p className="stat-label">Executive roles</p>
             </motion.div>
-            <motion.div className="stat-card" variants={card} whileHover={{ scale: 1.05, y: -5 }}>
+            <motion.div className="stat-card stat-orange" variants={card} whileHover={{ scale: 1.05, y: -5 }}>
               <motion.div
                 className="stat-icon"
                 initial={{ rotate: -10 }}
@@ -118,7 +119,7 @@ export default function HomePage() {
               >
                 <TrendingUp size={28} strokeWidth={2} />
               </motion.div>
-              <span className="stat-number">20+</span>
+              <span className="stat-number"><CountUp to={20} suffix="+" /></span>
               <p className="stat-label">Growth initiatives</p>
             </motion.div>
           </motion.div>
@@ -310,6 +311,38 @@ export default function HomePage() {
             <p>1:1 with engineering managers and staff engineers on career growth and craft.</p>
           </motion.article>
         </motion.div>
+      </motion.section>
+
+      {/* Testimonials Slider */}
+      <motion.section className="section features" variants={fadeUp} viewport={{ once: true, amount: 0.2 }}>
+        <div className="section-intro">
+          <p className="section-label">Testimonials</p>
+          <h2>Trusted by founders and operators.</h2>
+        </div>
+        <Carousel
+          slides={[
+            {
+              image: '/images/image-5.jpg',
+              badge: 'Founder',
+              title: '“Dimas helped us ship faster without sacrificing quality.”',
+              description: 'Series A startup — delivery excellence and platform foundations.',
+            },
+            {
+              image: '/images/image-6.jpg',
+              badge: 'COO',
+              title: '“He brings clarity to messy transformations.”',
+              description: 'Enterprise digital modernization — operating model redesign.',
+            },
+            {
+              image: '/images/image-7.jpg',
+              badge: 'Head of Eng',
+              title: '“Pragmatic and people-first leadership.”',
+              description: 'Scaling engineering organization — hiring and rituals.',
+            },
+          ]}
+          autoPlayMs={6000}
+          ariaLabel="Testimonials"
+        />
       </motion.section>
 
       {/* Contact Section */}
