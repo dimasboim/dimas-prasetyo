@@ -330,20 +330,20 @@ export default function HomePage() {
         <Carousel
           slides={[
             {
-              image: '/images/image-5.jpg',
-              badge: 'Founder',
+              image: '/images/images-5.png',
+              badge: 'Campaign.com CEO',
               title: '“Dimas helped us ship faster without sacrificing quality.”',
-              description: 'Series A startup — delivery excellence and platform foundations.',
+              description: 'Campaign — delivery excellence and platform foundations.',
             },
             {
               image: '/images/image-6.jpg',
-              badge: 'COO',
+              badge: 'CRM Account Manager',
               title: '“He brings clarity to messy transformations.”',
               description: 'Enterprise digital modernization — operating model redesign.',
             },
             {
-              image: '/images/image-7.jpg',
-              badge: 'Head of Eng',
+              image: '/images/images-7.png',
+              badge: 'Developer PadiUMKM',
               title: '“Pragmatic and people-first leadership.”',
               description: 'Scaling engineering organization — hiring and rituals.',
             },
