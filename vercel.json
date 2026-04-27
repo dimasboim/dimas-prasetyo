@@ -11,5 +11,13 @@
       "src": "^(.*)$",
       "dest": "/$1"
     }
+  ],
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "has": [{ "type": "host", "value": "dimas-prasetyo.com" }],
+      "destination": "https://www.dimas-prasetyo.com/$1",
+      "permanent": true
+    }
   ]
 }
