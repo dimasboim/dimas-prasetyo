@@ -3,6 +3,7 @@
 import { motion, easeOut, easeInOut, useScroll, useSpring } from 'framer-motion';
 import { skillGroups } from './skills';
 import { Briefcase, Building2, TrendingUp, Compass, Users, Rocket, Mail, ArrowRight, ExternalLink, Cpu, ClipboardList, Camera, Link, ChevronDown } from 'lucide-react';
+import Carousel from './components/Carousel';
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -123,8 +124,8 @@ export default function HomePage() {
           </motion.div>
         </motion.div>
 
-        {/* Hero Visual */}
-        <motion.div className="hero-visual" variants={scaleIn} transition={{ duration: 1, ease: easeOut }}>
+        {/* Hero Visual with animated gradient */}
+        <motion.div className="hero-visual hero-visual-animated" variants={scaleIn} transition={{ duration: 1, ease: easeOut }}>
           <motion.div
             className="media-shell"
             initial={{ opacity: 0, y: 30 }}
@@ -254,68 +255,39 @@ export default function HomePage() {
         </motion.div>
       </motion.section>
 
-      {/* Selected Work Section */}
+      {/* Selected Work Section — Carousel */}
       <motion.section className="section selected" id="selected-work" variants={fadeUp} viewport={{ once: true, amount: 0.2 }}>
         <div className="section-intro">
           <p className="section-label">Selected work</p>
           <h2>Key milestones shaping my career journey.</h2>
         </div>
-        <motion.div className="project-grid" variants={stagger}>
-          <motion.article className="project-card" variants={card} whileHover={{ y: -12, scale: 1.02 }}>
-            <motion.img src="/images/image-2.jpg" alt="PadiUMKM leadership" loading="lazy" />
-            <div className="project-copy">
-              <span className="badge">2025</span>
-              <h3>CTO, PadiUMKM</h3>
-              <p>Leading platform strategy for Indonesia's UMKM ecosystem.</p>
-              <motion.a
-                className="project-link"
-                href="#"
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.5 }}
-              >
-                View project <ExternalLink size={14} strokeWidth={2.5} />
-              </motion.a>
-            </div>
-          </motion.article>
-          <motion.article className="project-card" variants={card} whileHover={{ y: -12, scale: 1.02 }}>
-            <motion.img src="/images/image-3.jpg" alt="Campaign.com leadership" loading="lazy" />
-            <div className="project-copy">
-              <span className="badge">2015</span>
-              <h3>CTO, Campaign.com</h3>
-              <p>Built and scaled digital campaign technologies across the region.</p>
-              <motion.a
-                className="project-link"
-                href="#"
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.6 }}
-              >
-                View project <ExternalLink size={14} strokeWidth={2.5} />
-              </motion.a>
-            </div>
-          </motion.article>
-          <motion.article className="project-card" variants={card} whileHover={{ y: -12, scale: 1.02 }}>
-            <motion.img src="/images/image-4.jpg" alt="Kalbe leadership" loading="lazy" />
-            <div className="project-copy">
-              <span className="badge">Enterprise</span>
-              <h3>VP IT CRM, Kalbe</h3>
-              <p>Oversaw CRM and engagement systems for a leading pharmaceutical group.</p>
-              <motion.a
-                className="project-link"
-                href="#"
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.7 }}
-              >
-                View project <ExternalLink size={14} strokeWidth={2.5} />
-              </motion.a>
-            </div>
-          </motion.article>
-        </motion.div>
+        <Carousel
+          slides={[
+            {
+              image: '/images/image-2.jpg',
+              badge: '2025',
+              title: 'CTO, PadiUMKM',
+              description: "Leading platform strategy for Indonesia's UMKM ecosystem.",
+              href: '#'
+            },
+            {
+              image: '/images/image-3.jpg',
+              badge: '2015',
+              title: 'CTO, Campaign.com',
+              description: 'Built and scaled digital campaign technologies across the region.',
+              href: '#'
+            },
+            {
+              image: '/images/image-4.jpg',
+              badge: 'Enterprise',
+              title: 'VP IT CRM, Kalbe',
+              description: 'Oversaw CRM and engagement systems for a leading pharmaceutical group.',
+              href: '#'
+            },
+          ]}
+          autoPlayMs={5500}
+          ariaLabel="Selected work"
+        />
       </motion.section>
 
       {/* Speaking & Writing */}
