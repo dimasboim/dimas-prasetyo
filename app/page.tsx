@@ -322,7 +322,7 @@ export default function HomePage() {
       </motion.section>
 
       {/* Testimonials Slider */}
-      <motion.section className="section features" variants={fadeUp} viewport={{ once: true, amount: 0.2 }}>
+      {/* <motion.section className="section features" variants={fadeUp} viewport={{ once: true, amount: 0.2 }}>
         <div className="section-intro">
           <p className="section-label">Testimonials</p>
           <h2>Trusted by founders and operators.</h2>
@@ -351,7 +351,7 @@ export default function HomePage() {
           autoPlayMs={6000}
           ariaLabel="Testimonials"
         />
-      </motion.section>
+      </motion.section> */}
 
       {/* Contact Section */}
       <motion.section id="contact" className="section contact" variants={fadeUp} viewport={{ once: true, amount: 0.2 }}>
