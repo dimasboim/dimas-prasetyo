@@ -4,14 +4,14 @@ import type { Metadata } from 'next';
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.dimas-prasetyo.com'),
   title: {
-    default: 'Dimas Prasetyo | Senior Technology Leader',
+    default: 'Dimas Prasetyo Tegar Asmoro | Chief Technology Officer',
     template: '%s | Dimas Prasetyo',
   },
-  description: 'Senior technology leader from Jakarta. CTO, product strategy, and enterprise transformation with 15+ years of experience building digital platforms and scaling engineering organizations.',
-  keywords: ['Dimas Prasetyo', 'CTO', 'Technology Leader', 'Product Strategy', 'Digital Transformation', 'Jakarta', 'Indonesia', 'Senior Technology Executive'],
-  authors: [{ name: 'Dimas Prasetyo' }],
-  creator: 'Dimas Prasetyo',
-  publisher: 'Dimas Prasetyo',
+  description: 'Technology executive with two decades in software engineering, currently CTO of PadiUMKM (PT Telkom Indonesia). Track record across telco/MSME, healthtech, agritech, and venture-backed marketplaces.',
+  keywords: ['Dimas Prasetyo', 'CTO', 'Chief Technology Officer', 'VP Engineering', 'Technology Leader', 'PadiUMKM', 'Telkom Indonesia', 'Jakarta', 'Indonesia', 'Technology Executive'],
+  authors: [{ name: 'Dimas Prasetyo Tegar Asmoro' }],
+  creator: 'Dimas Prasetyo Tegar Asmoro',
+  publisher: 'Dimas Prasetyo Tegar Asmoro',
   robots: {
     index: true,
     follow: true,
@@ -27,15 +27,15 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'en_US',
     url: 'https://www.dimas-prasetyo.com',
-    title: 'Dimas Prasetyo | Senior Technology Leader',
-    description: 'Senior technology leader from Jakarta. CTO, product strategy, and enterprise transformation with 15+ years of experience.',
+    title: 'Dimas Prasetyo Tegar Asmoro | Chief Technology Officer',
+    description: 'Technology executive with two decades in software engineering, currently CTO of PadiUMKM (PT Telkom Indonesia).',
     siteName: 'Dimas Prasetyo',
     images: [
       {
         url: '/images/og-image.jpg',
         width: 1200,
         height: 630,
-        alt: 'Dimas Prasetyo - Technology Leadership Portfolio',
+        alt: 'Dimas Prasetyo Tegar Asmoro - Technology Leadership Portfolio',
       },
     ],
   },
@@ -43,8 +43,8 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     site: '@dimasprasetyo',
     creator: '@dimasprasetyo',
-    title: 'Dimas Prasetyo | Senior Technology Leader',
-    description: 'Senior technology leader from Jakarta. CTO, product strategy, and enterprise transformation.',
+    title: 'Dimas Prasetyo Tegar Asmoro | Chief Technology Officer',
+    description: 'Technology executive with two decades in software engineering, currently CTO of PadiUMKM (PT Telkom Indonesia).',
     images: ['/images/og-image.jpg'],
   },
   icons: {
@@ -64,12 +64,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <footer className="site-footer">
           <div className="footer-inner site-shell">
             <div className="footer-brand">
-              <strong>Dimas Prasetyo</strong>
-              <span>Senior Technology Leader</span>
+              <strong>Dimas Prasetyo Tegar Asmoro</strong>
+              <span>Chief Technology Officer</span>
             </div>
             <nav className="footer-links">
-              <a href="#skills">Skills</a>
-              <a href="#selected-work">Selected work</a>
+              <a href="#signature">Leadership</a>
+              <a href="#experience">Experience</a>
               <a href="/cv">CV</a>
               <a href="#contact">Contact</a>
             </nav>
