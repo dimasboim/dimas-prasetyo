@@ -360,25 +360,28 @@ export default function HomePage() {
           <p className="section-label">Contact</p>
           <h2>Ready to shape technology, product, and people?</h2>
           <p>Let&rsquo;s connect on leadership, transformation, or digital strategy.</p>
-          <motion.a
-            className="button button-primary"
-            href="mailto:dimasboim@gmail.com"
-            whileHover={{ y: -2 }}
-            whileTap={{ scale: 0.98 }}
-          >
-            <Mail size={18} strokeWidth={2.5} />
-            dimasboim@gmail.com
-          </motion.a>
-          <motion.a
-            className="button button-secondary"
-            href="/cv/dimas-prasetyo-cv.pdf"
-            download
-            style={{ marginLeft: '0.75rem' }}
-            whileHover={{ y: -2 }}
-            whileTap={{ scale: 0.98 }}
-          >
-            Download CV
-          </motion.a>
+          <motion.div className="contact-actions" variants={stagger}>
+            <motion.a
+              className="button button-primary"
+              href="mailto:dimasboim@gmail.com"
+              variants={card}
+              whileHover={{ y: -2 }}
+              whileTap={{ scale: 0.98 }}
+            >
+              <Mail size={18} strokeWidth={2.5} />
+              dimasboim@gmail.com
+            </motion.a>
+            <motion.a
+              className="button button-secondary"
+              href="/cv/dimas-prasetyo-cv.pdf"
+              download
+              variants={card}
+              whileHover={{ y: -2 }}
+              whileTap={{ scale: 0.98 }}
+            >
+              Download CV
+            </motion.a>
+          </motion.div>
           <motion.div className="social-links" variants={stagger}>
             <a className="social-link" href="https://www.linkedin.com/in/dimasprasetyotegar" target="_blank" rel="noopener noreferrer">
               <Link size={16} /> in/dimasprasetyotegar
