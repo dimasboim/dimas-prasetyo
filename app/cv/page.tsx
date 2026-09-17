@@ -6,7 +6,7 @@ export default function CVPage() {
       <section className="section">
         <div className="section-intro">
           <p className="section-label">Resume / CV</p>
-          <h2>Download and view CV</h2>
+          <h2>Dimas Prasetyo Tegar Asmoro — Executive CV</h2>
           <p className="intro">You can download the CV as PDF or view it inline below.</p>
         </div>
         <div style={{ display: 'flex', gap: '1rem', marginBottom: '1.5rem' }}>
