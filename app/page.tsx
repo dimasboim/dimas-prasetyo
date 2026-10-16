@@ -5,7 +5,7 @@ import { motion, easeOut, easeInOut } from 'framer-motion';
 import { skillGroups } from './skills';
 import {
   Briefcase, Building2, GraduationCap, Mail, ArrowRight, Cpu,
-  ClipboardList, Users, Terminal, Camera, Link, ChevronDown,
+  ClipboardList, Users, Terminal, Camera, Link, ChevronDown, ExternalLink,
 } from 'lucide-react';
 import CountUp from './components/CountUp';
 import Carousel from './components/Carousel';
@@ -333,6 +333,40 @@ export default function HomePage() {
             <h3>Speaking & mentoring</h3>
             <p>Talks on engineering leadership, platform building, and organizational design at Southeast Asian technology events; ongoing 1:1 mentoring of engineering managers and staff engineers.</p>
           </motion.article>
+        </motion.div>
+      </motion.section>
+
+      {/* Publication */}
+      <motion.section id="publication" className="section features" variants={fadeUp} viewport={{ once: true, amount: 0.2 }}>
+        <div className="section-intro">
+          <p className="section-label">Publication</p>
+          <h2>Published author — a hands-on reference for mobile backend integration.</h2>
+        </div>
+        <motion.div className="book-card" variants={card}>
+          <div className="book-cover">
+            <img src="/images/book-integrasi-nodejs-kotlin.jpg" alt="Integrasi Node.js dan Kotlin untuk Aplikasi Point of Sales Sederhana — book cover" loading="lazy" />
+          </div>
+          <div className="book-details">
+            <h3>Integrasi Node.js dan Kotlin untuk Aplikasi Point of Sales Sederhana</h3>
+            <p className="book-meta">Dimas Prasetyo Tegar Asmoro, S.Kom., M.Kom. · Idebuku.id · ISBN 978-634-307-173-0</p>
+            <p className="book-desc">
+              A course reference for Mobile Application Programming, covering backend integration between a
+              Node.js REST API and an Android app built in Kotlin, using a simple Point-of-Sales (POS) case
+              study. Walks through environment setup, relational database design with MySQL/XAMPP, building
+              and consuming the REST API, authentication, and testing — with runnable code examples at every step.
+            </p>
+            <motion.a
+              className="button button-secondary"
+              href="https://idebuku.id/store/product/integrasi-node-js-dan-kotlin-untuk-aplikasi-point-of-sales-sederhana/"
+              target="_blank"
+              rel="noopener noreferrer"
+              whileHover={{ y: -2 }}
+              whileTap={{ scale: 0.97 }}
+            >
+              Beli buku di Idebuku.id
+              <ExternalLink size={16} strokeWidth={2.5} />
+            </motion.a>
+          </div>
         </motion.div>
       </motion.section>
 

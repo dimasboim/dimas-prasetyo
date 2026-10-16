@@ -70,6 +70,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <nav className="footer-links">
               <a href="#signature">Leadership</a>
               <a href="#experience">Experience</a>
+              <a href="#publication">Book</a>
               <a href="/cv">CV</a>
               <a href="#contact">Contact</a>
             </nav>
