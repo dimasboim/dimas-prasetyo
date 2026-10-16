@@ -47,10 +47,6 @@ export const metadata: Metadata = {
     description: 'Technology executive with two decades in software engineering, currently CTO of PadiUMKM (PT Telkom Indonesia).',
     images: ['/images/og-image.jpg'],
   },
-  icons: {
-    icon: '/favicon.ico',
-    apple: '/apple-touch-icon.png',
-  },
   verification: {
     google: 'your-google-verification-code',
   },
