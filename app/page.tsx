@@ -10,6 +10,108 @@ import {
 import CountUp from './components/CountUp';
 import Carousel from './components/Carousel';
 
+const personSchema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Person',
+      '@id': 'https://www.dimas-prasetyo.com/#person',
+      name: 'Dimas Prasetyo Tegar Asmoro',
+      alternateName: 'Dimas Prasetyo',
+      givenName: 'Dimas',
+      familyName: 'Tegar Asmoro',
+      jobTitle: 'Chief Technology Officer',
+      description: 'Senior technology leader, lecturer, and author based in Indonesia. Works on digital platforms, engineering organizations, and applied AI.',
+      url: 'https://www.dimas-prasetyo.com',
+      image: 'https://www.dimas-prasetyo.com/images/og-image.jpg',
+      nationality: { '@type': 'Country', name: 'Indonesia' },
+      worksFor: {
+        '@type': 'Organization',
+        name: 'PT Telkom Indonesia',
+        url: 'https://www.telkom.co.id',
+      },
+      alumniOf: [
+        {
+          '@type': 'CollegeOrUniversity',
+          name: 'Universitas Bunda Mulia',
+          url: 'https://www.ubm.ac.id',
+        },
+        { '@type': 'CollegeOrUniversity', name: 'STMIK Swadharma' },
+      ],
+      hasCredential: [
+        {
+          '@type': 'EducationalOccupationalCredential',
+          credentialCategory: 'degree',
+          educationalLevel: "Master's Degree",
+          name: 'Magister Ilmu Komputer (M.Kom.)',
+          recognizedBy: { '@type': 'CollegeOrUniversity', name: 'Universitas Bunda Mulia' },
+        },
+        {
+          '@type': 'EducationalOccupationalCredential',
+          credentialCategory: 'degree',
+          educationalLevel: "Bachelor's Degree",
+          name: 'Sarjana Komputer (S.Kom.), Teknik Informatika',
+          recognizedBy: { '@type': 'CollegeOrUniversity', name: 'STMIK Swadharma' },
+        },
+      ],
+      knowsAbout: [
+        'Technology strategy',
+        'Software architecture',
+        'Platform engineering',
+        'Machine learning',
+        'Artificial intelligence',
+        'Engineering management',
+      ],
+      knowsLanguage: [
+        { '@type': 'Language', name: 'Indonesian', alternateName: 'id' },
+        { '@type': 'Language', name: 'English', alternateName: 'en' },
+      ],
+      identifier: {
+        '@type': 'PropertyValue',
+        propertyID: 'ORCID',
+        value: '0009-0005-0427-5735',
+        url: 'https://orcid.org/0009-0005-0427-5735',
+      },
+      sameAs: [
+        'https://orcid.org/0009-0005-0427-5735',
+        'https://www.linkedin.com/in/dimasprasetyotegar',
+        'https://instagram.com/dimasboim',
+      ],
+    },
+    {
+      '@type': 'Book',
+      '@id': 'https://www.dimas-prasetyo.com/#book-pos',
+      name: 'Integrasi Node.js dan Kotlin untuk Aplikasi Point of Sales Sederhana',
+      author: { '@id': 'https://www.dimas-prasetyo.com/#person' },
+      inLanguage: 'id',
+      bookFormat: 'https://schema.org/Paperback',
+      datePublished: '2026',
+      isbn: '978-634-307-173-0',
+      publisher: {
+        '@type': 'Organization',
+        name: 'Idebuku.id',
+      },
+    },
+    {
+      '@type': 'WebSite',
+      '@id': 'https://www.dimas-prasetyo.com/#website',
+      url: 'https://www.dimas-prasetyo.com',
+      name: 'Dimas Prasetyo',
+      inLanguage: 'en',
+      publisher: { '@id': 'https://www.dimas-prasetyo.com/#person' },
+    },
+    {
+      '@type': 'ProfilePage',
+      '@id': 'https://www.dimas-prasetyo.com/#webpage',
+      url: 'https://www.dimas-prasetyo.com',
+      name: 'Dimas Prasetyo | Senior Technology Leader',
+      isPartOf: { '@id': 'https://www.dimas-prasetyo.com/#website' },
+      about: { '@id': 'https://www.dimas-prasetyo.com/#person' },
+      mainEntity: { '@id': 'https://www.dimas-prasetyo.com/#person' },
+    },
+  ],
+};
+
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: easeOut } },
@@ -110,7 +212,12 @@ const highlights = [
 
 export default function HomePage() {
   return (
-    <motion.main className="site-shell" initial="hidden" animate="visible" variants={stagger}>
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
+      />
+      <motion.main className="site-shell" initial="hidden" animate="visible" variants={stagger}>
       {/* Hero Section */}
       <motion.section className="hero" variants={fadeUp}>
         <motion.div className="hero-copy" variants={stagger}>
@@ -426,6 +533,7 @@ export default function HomePage() {
           </motion.div>
         </motion.div>
       </motion.section>
-    </motion.main>
+      </motion.main>
+    </>
   );
 }
