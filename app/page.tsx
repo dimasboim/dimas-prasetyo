@@ -485,11 +485,11 @@ export default function HomePage() {
         </div>
         <motion.div className="feature-grid" variants={stagger}>
           <motion.article className="feature-card" variants={card} whileHover={{ y: -4 }}>
-            <h3>M.Sc. Computer Science</h3>
+            <h3>M.Kom. — Magister Ilmu Komputer</h3>
             <p>Universitas Bunda Mulia, 2009–2012. Specialization in software development and e-commerce. Cum laude, GPA 3.73/4.00. Best Graduate, 2012.</p>
           </motion.article>
           <motion.article className="feature-card" variants={card} whileHover={{ y: -4 }}>
-            <h3>B.Sc. Computer Science</h3>
+            <h3>S.Kom. — Sarjana Komputer</h3>
             <p>STMIK Swadharma, 2003–2007. Specialization in software development. Cum laude, GPA 3.71/4.00. Best Graduate, 2007.</p>
           </motion.article>
         </motion.div>
