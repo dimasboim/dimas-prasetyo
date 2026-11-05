@@ -1,5 +1,6 @@
 import './globals.css';
 import type { Metadata } from 'next';
+import SiteHeader from './components/SiteHeader';
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.dimas-prasetyo.com'),
@@ -8,6 +9,9 @@ export const metadata: Metadata = {
     template: '%s | Dimas Prasetyo',
   },
   description: 'Technology executive with two decades in software engineering, currently CTO of PadiUMKM (PT Telkom Indonesia). Track record across telco/MSME, healthtech, agritech, and venture-backed marketplaces.',
+  alternates: {
+    canonical: '/',
+  },
   keywords: ['Dimas Prasetyo', 'CTO', 'Chief Technology Officer', 'VP Engineering', 'Technology Leader', 'PadiUMKM', 'Telkom Indonesia', 'Jakarta', 'Indonesia', 'Technology Executive'],
   authors: [{ name: 'Dimas Prasetyo Tegar Asmoro' }],
   creator: 'Dimas Prasetyo Tegar Asmoro',
@@ -56,6 +60,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" suppressHydrationWarning>
       <body>
+        <SiteHeader />
         {children}
         <footer className="site-footer">
           <div className="footer-inner site-shell">
@@ -64,11 +69,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               <span>Chief Technology Officer</span>
             </div>
             <nav className="footer-links">
-              <a href="#signature">Leadership</a>
-              <a href="#experience">Experience</a>
-              <a href="#publication">Book</a>
+              <a href="/#signature">Leadership</a>
+              <a href="/#experience">Experience</a>
+              <a href="/#publication">Book</a>
               <a href="/cv">CV</a>
-              <a href="#contact">Contact</a>
+              <a href="/#contact">Contact</a>
             </nav>
             <div className="footer-social">
               <a href="https://instagram.com/dimasboim" target="_blank" rel="noopener noreferrer">Instagram</a>

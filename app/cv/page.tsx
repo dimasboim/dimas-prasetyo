@@ -1,4 +1,13 @@
+import type { Metadata } from 'next';
 import React from 'react';
+
+export const metadata: Metadata = {
+  title: 'Curriculum Vitae',
+  description: 'Download or view the executive CV of Dimas Prasetyo Tegar Asmoro — Chief Technology Officer, VP Engineering, and Head of IT & Product with two decades in software engineering.',
+  alternates: {
+    canonical: '/cv',
+  },
+};
 
 export default function CVPage() {
   return (
@@ -6,7 +15,7 @@ export default function CVPage() {
       <section className="section">
         <div className="section-intro">
           <p className="section-label">Resume / CV</p>
-          <h2>Dimas Prasetyo Tegar Asmoro — Executive CV</h2>
+          <h1>Dimas Prasetyo Tegar Asmoro — Executive CV</h1>
           <p className="intro">You can download the CV as PDF or view it inline below.</p>
         </div>
         <div style={{ display: 'flex', gap: '1rem', marginBottom: '1.5rem' }}>

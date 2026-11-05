@@ -442,7 +442,7 @@ export default function HomePage() {
       </motion.section>
 
       {/* Skills Section */}
-      <motion.section className="section features" variants={fadeUp} viewport={{ once: true, amount: 0.2 }}>
+      <motion.section id="skills" className="section features" variants={fadeUp} viewport={{ once: true, amount: 0.2 }}>
         <div className="section-intro">
           <p className="section-label">Capabilities & technology</p>
           <h2>Leadership, delivery, architecture, and hands-on craft.</h2>
@@ -530,7 +530,7 @@ export default function HomePage() {
       </motion.section>
 
       {/* Education */}
-      <motion.section className="section features" variants={fadeUp} viewport={{ once: true, amount: 0.2 }}>
+      <motion.section id="education" className="section features" variants={fadeUp} viewport={{ once: true, amount: 0.2 }}>
         <div className="section-intro">
           <p className="section-label">Education</p>
           <h2>Cum laude, Best Graduate — both degrees.</h2>
