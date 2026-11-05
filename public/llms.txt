@@ -1,0 +1,30 @@
+# Dimas Prasetyo Tegar Asmoro
+
+> Chief Technology Officer, VP Engineering, and Head of IT & Product. Technology executive with two decades in software engineering, currently CTO of PadiUMKM (PT Telkom Indonesia). Author and lecturer based in Jakarta, Indonesia.
+
+Dimas Prasetyo Tegar Asmoro is a technology executive with two decades in software
+engineering and more than a decade leading technology and product functions at
+C-level. He progressed from Head of Engineering to VP Engineering to CTO at
+PadiUMKM, PT Telkom Indonesia's national B2B marketplace for the MSME ecosystem,
+in three years. His track record spans state-owned enterprise, pharmaceutical and
+healthtech (Kalbe Group), agritech, and venture-backed marketplaces.
+
+## Key facts
+
+- Current role: Chief Technology Officer, PadiUMKM — PT Telkom Indonesia (Tribe SMB), Dec 2022–present
+- Education: M.Kom. (Magister Ilmu Komputer), Universitas Bunda Mulia, cum laude, Best Graduate 2012; S.Kom. (Sarjana Komputer), STMIK Swadharma, cum laude, Best Graduate 2007
+- Lecturer (Lektor) since 2007 — ITB Swadharma (2007–2020), STMIK Jayakarta (2021–present)
+- Author of two books:
+  - "Integrasi Node.js dan Kotlin untuk Aplikasi Point of Sales Sederhana" (ISBN 978-634-307-173-0)
+  - "Machine Learning & Artificial Intelligence: Memahami Bagaimana Mesin Belajar dan Memanfaatkan Pembelajaran Mesin serta AI dalam Pekerjaan Sehari-hari" (ISBN 978-634-307-209-6 print, 978-634-307-210-2 PDF)
+- ORCID: 0009-0005-0427-5735
+
+## Pages
+
+- [Homepage](https://www.dimas-prasetyo.com/): Full profile — leadership signature, career highlights, professional experience, skills, publications, education, and contact information
+- [CV](https://www.dimas-prasetyo.com/cv): Downloadable executive CV (PDF)
+
+## Contact
+
+- Email: dimasboim@gmail.com
+- LinkedIn: https://www.linkedin.com/in/dimasprasetyotegar

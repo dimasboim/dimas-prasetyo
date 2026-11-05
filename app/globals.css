@@ -74,6 +74,135 @@ main.site-shell {
   padding-bottom: 5rem;
 }
 
+/* Keep anchor targets from hiding behind the sticky header */
+[id] {
+  scroll-margin-top: 88px;
+}
+
+/* Site header */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(247, 249, 252, 0.88);
+  backdrop-filter: saturate(180%) blur(10px);
+  -webkit-backdrop-filter: saturate(180%) blur(10px);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.site-header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-top: 0.9rem;
+  padding-bottom: 0.9rem;
+}
+
+.site-header-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-weight: 700;
+  font-size: 1.02rem;
+  color: var(--color-text);
+  white-space: nowrap;
+}
+
+.site-header-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  background: var(--color-accent-dark);
+  color: #ffffff;
+  font-size: 0.85rem;
+  font-weight: 800;
+  flex-shrink: 0;
+}
+
+.site-header-nav {
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+}
+
+.site-header-nav a {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--color-muted);
+  white-space: nowrap;
+}
+
+.site-header-nav a:hover {
+  color: var(--color-accent);
+}
+
+.site-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.site-header-cv {
+  padding: 0.55rem 1.1rem;
+  font-size: 0.88rem;
+}
+
+.site-header-toggle {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  padding: 0.4rem;
+  color: var(--color-text);
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+.site-header-toggle:hover {
+  background: var(--color-accent-light);
+}
+
+.site-header-mobile-nav {
+  display: none;
+}
+
+@media (max-width: 860px) {
+  .site-header-nav,
+  .button.site-header-cv {
+    display: none;
+  }
+
+  .site-header-toggle {
+    display: inline-flex;
+  }
+
+  .site-header-mobile-nav {
+    display: flex;
+    flex-direction: column;
+    padding-top: 0.5rem;
+    padding-bottom: 1.25rem;
+    gap: 0.2rem;
+    border-top: 1px solid var(--color-border);
+  }
+
+  .site-header-mobile-nav a {
+    padding: 0.7rem 0.6rem;
+    font-weight: 600;
+    color: var(--color-text);
+    border-radius: 8px;
+  }
+
+  .site-header-mobile-nav a:hover {
+    background: var(--color-accent-light);
+    color: var(--color-accent-dark);
+  }
+}
+
 .hero {
   position: relative;
   display: grid;
@@ -272,6 +401,7 @@ main.site-shell {
   margin-bottom: 0.75rem;
 }
 
+.section-intro h1,
 .section-intro h2 {
   margin: 0.5rem 0 0;
   font-size: clamp(2rem, 3.6vw, 2.8rem);
