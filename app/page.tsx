@@ -183,6 +183,28 @@ const experience = [
   },
 ];
 
+const books = [
+  {
+    cover: '/images/book-integrasi-nodejs-kotlin.jpg',
+    title: 'Integrasi Node.js dan Kotlin untuk Aplikasi Point of Sales Sederhana',
+    meta: 'Dimas Prasetyo Tegar Asmoro, S.Kom., M.Kom. · Idebuku.id · ISBN 978-634-307-173-0',
+    desc: 'A course reference for Mobile Application Programming, covering backend integration between a Node.js REST API and an Android app built in Kotlin, using a simple Point-of-Sales (POS) case study. Walks through environment setup, relational database design with MySQL/XAMPP, building and consuming the REST API, authentication, and testing — with runnable code examples at every step.',
+    links: [
+      { label: 'Beli buku di Idebuku.id', href: 'https://idebuku.id/store/product/integrasi-node-js-dan-kotlin-untuk-aplikasi-point-of-sales-sederhana/' },
+      { label: 'Baca e-book di Google Books', href: 'https://books.google.co.id/books?id=vIwbEgAAQBAJ&newbks=0&printsec=frontcover&pg=PA57&dq=integrasi+node.js+kotlin+point+of+sales&hl=en&source=newbks_fb&redir_esc=y#v=onepage&q&f=false' },
+    ],
+  },
+  {
+    cover: '/images/book-machine-learning-ai.jpg',
+    title: 'Machine Learning & Artificial Intelligence: Memahami Bagaimana Mesin Belajar dan Memanfaatkan Pembelajaran Mesin serta AI dalam Pekerjaan Sehari-hari',
+    meta: 'Dimas Prasetyo Tegar Asmoro, S.Kom., M.Kom. · Idebuku.id',
+    desc: 'A plain-language introduction to AI for everyday readers and knowledge workers — how machines learn from examples, the large language models behind tools like ChatGPT, Claude, and Gemini, how to write effective prompts, how to set up AI agents, and how to apply these tools in day-to-day work. Told through stories and hands-on experiments rather than heavy formulas.',
+    links: [
+      { label: 'Beli buku di Idebuku.id', href: 'https://idebuku.id/store/product/machine-learning-artificial-intelligence-memahami-bagaimana-mesin-belajar-dan-memanfaatkan-pembelajaran-mesin-serta-ai-dalam-pekerjaan-sehari-hari/' },
+    ],
+  },
+];
+
 const highlights = [
   {
     title: 'Head of Engineering → VP → CTO',
@@ -447,33 +469,37 @@ export default function HomePage() {
       <motion.section id="publication" className="section features" variants={fadeUp} viewport={{ once: true, amount: 0.2 }}>
         <div className="section-intro">
           <p className="section-label">Publication</p>
-          <h2>Published author — a hands-on reference for mobile backend integration.</h2>
+          <h2>Published author — hands-on references on mobile backend integration and applied AI.</h2>
         </div>
-        <motion.div className="book-card" variants={card}>
-          <div className="book-cover">
-            <img src="/images/book-integrasi-nodejs-kotlin.jpg" alt="Integrasi Node.js dan Kotlin untuk Aplikasi Point of Sales Sederhana — book cover" loading="lazy" />
-          </div>
-          <div className="book-details">
-            <h3>Integrasi Node.js dan Kotlin untuk Aplikasi Point of Sales Sederhana</h3>
-            <p className="book-meta">Dimas Prasetyo Tegar Asmoro, S.Kom., M.Kom. · Idebuku.id · ISBN 978-634-307-173-0</p>
-            <p className="book-desc">
-              A course reference for Mobile Application Programming, covering backend integration between a
-              Node.js REST API and an Android app built in Kotlin, using a simple Point-of-Sales (POS) case
-              study. Walks through environment setup, relational database design with MySQL/XAMPP, building
-              and consuming the REST API, authentication, and testing — with runnable code examples at every step.
-            </p>
-            <motion.a
-              className="button button-secondary"
-              href="https://idebuku.id/store/product/integrasi-node-js-dan-kotlin-untuk-aplikasi-point-of-sales-sederhana/"
-              target="_blank"
-              rel="noopener noreferrer"
-              whileHover={{ y: -2 }}
-              whileTap={{ scale: 0.97 }}
-            >
-              Beli buku di Idebuku.id
-              <ExternalLink size={16} strokeWidth={2.5} />
-            </motion.a>
-          </div>
+        <motion.div className="book-list" variants={stagger}>
+          {books.map((book) => (
+            <motion.div className="book-card" key={book.title} variants={card}>
+              <div className="book-cover">
+                <img src={book.cover} alt={`${book.title} — book cover`} loading="lazy" />
+              </div>
+              <div className="book-details">
+                <h3>{book.title}</h3>
+                <p className="book-meta">{book.meta}</p>
+                <p className="book-desc">{book.desc}</p>
+                <div className="book-links">
+                  {book.links.map((link) => (
+                    <motion.a
+                      key={link.href}
+                      className="button button-secondary"
+                      href={link.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      whileHover={{ y: -2 }}
+                      whileTap={{ scale: 0.97 }}
+                    >
+                      {link.label}
+                      <ExternalLink size={16} strokeWidth={2.5} />
+                    </motion.a>
+                  ))}
+                </div>
+              </div>
+            </motion.div>
+          ))}
         </motion.div>
       </motion.section>
 
