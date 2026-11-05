@@ -93,6 +93,32 @@ const personSchema = {
       },
     },
     {
+      '@type': 'Book',
+      '@id': 'https://www.dimas-prasetyo.com/#book-ml-ai-print',
+      name: 'Machine Learning & Artificial Intelligence: Memahami Bagaimana Mesin Belajar dan Memanfaatkan Pembelajaran Mesin serta AI dalam Pekerjaan Sehari-hari',
+      author: { '@id': 'https://www.dimas-prasetyo.com/#person' },
+      inLanguage: 'id',
+      bookFormat: 'https://schema.org/Paperback',
+      isbn: '978-634-307-209-6',
+      publisher: {
+        '@type': 'Organization',
+        name: 'Idebuku.id',
+      },
+    },
+    {
+      '@type': 'Book',
+      '@id': 'https://www.dimas-prasetyo.com/#book-ml-ai-pdf',
+      name: 'Machine Learning & Artificial Intelligence: Memahami Bagaimana Mesin Belajar dan Memanfaatkan Pembelajaran Mesin serta AI dalam Pekerjaan Sehari-hari',
+      author: { '@id': 'https://www.dimas-prasetyo.com/#person' },
+      inLanguage: 'id',
+      bookFormat: 'https://schema.org/EBook',
+      isbn: '978-634-307-210-2',
+      publisher: {
+        '@type': 'Organization',
+        name: 'Idebuku.id',
+      },
+    },
+    {
       '@type': 'WebSite',
       '@id': 'https://www.dimas-prasetyo.com/#website',
       url: 'https://www.dimas-prasetyo.com',
@@ -197,7 +223,7 @@ const books = [
   {
     cover: '/images/book-machine-learning-ai.jpg',
     title: 'Machine Learning & Artificial Intelligence: Memahami Bagaimana Mesin Belajar dan Memanfaatkan Pembelajaran Mesin serta AI dalam Pekerjaan Sehari-hari',
-    meta: 'Dimas Prasetyo Tegar Asmoro, S.Kom., M.Kom. · Idebuku.id',
+    meta: 'Dimas Prasetyo Tegar Asmoro, S.Kom., M.Kom. · Idebuku.id · ISBN 978-634-307-209-6 (cetak) · 978-634-307-210-2 (PDF)',
     desc: 'A plain-language introduction to AI for everyday readers and knowledge workers — how machines learn from examples, the large language models behind tools like ChatGPT, Claude, and Gemini, how to write effective prompts, how to set up AI agents, and how to apply these tools in day-to-day work. Told through stories and hands-on experiments rather than heavy formulas.',
     links: [
       { label: 'Beli buku di Idebuku.id', href: 'https://idebuku.id/store/product/machine-learning-artificial-intelligence-memahami-bagaimana-mesin-belajar-dan-memanfaatkan-pembelajaran-mesin-serta-ai-dalam-pekerjaan-sehari-hari/' },
